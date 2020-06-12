@@ -13,16 +13,20 @@ class NotesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let bbAddVehicleRent = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
-//        navigationItem.leftBarButtonItem = bbAddVehicleRent
-
-        // Do any additional setup after loading the view.
     }
-//
-//    @objc func logout(){
-//        self.navigationController?.popViewController(animated: true)
-//    }
 
+    @IBAction func bbAdd(_ sender: UIBarButtonItem) {
+        
+//        https://stackoverflow.com/questions/31922349/how-to-add-textfield-to-uialertcontroller-in-swift/31922603
+        let alert = UIAlertController(title: "New Subject", message: "Enter a subject name for this folder.", preferredStyle: UIAlertController.Style.alert)
+        alert.addTextField { (textSubject : UITextField!) -> Void in
+        textSubject.placeholder = "Subject Name"
+        }
+        alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(.init(title: "Save", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

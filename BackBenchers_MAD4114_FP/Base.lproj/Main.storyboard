@@ -152,7 +152,11 @@
                         <viewLayoutGuide key="safeArea" id="1tC-eV-Aai"/>
                     </view>
                     <navigationItem key="navigationItem" title="Notes" id="QTu-Mp-c4V">
-                        <barButtonItem key="rightBarButtonItem" title="Menu" id="FAC-aV-UYk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FAC-aV-UYk">
+                            <connections>
+                                <action selector="bbAdd:" destination="fuF-VY-1bU" id="fJM-D9-ocw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tblNotes" destination="qzQ-Cd-yze" id="KBl-PD-6UY"/>
