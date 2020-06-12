@@ -41,7 +41,7 @@ class NotesViewController: UIViewController {
 extension NotesViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NotesCell")
-        cell?.textLabel?.text = "Notes"
+        cell?.textLabel?.text = "Subject Name"
         return cell!
     }
     

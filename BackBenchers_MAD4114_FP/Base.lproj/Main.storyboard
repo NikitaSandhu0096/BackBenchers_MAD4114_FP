@@ -112,7 +112,7 @@
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKX-kW-uLY">
-                                <rect key="frame" x="30" y="319" width="137" height="74"/>
+                                <rect key="frame" x="30" y="308" width="137" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="tintColor" red="1" green="0.17257171751230038" blue="0.66734062789288695" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -121,7 +121,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iJ-Cc-BzO">
-                                <rect key="frame" x="242" y="217" width="137" height="74"/>
+                                <rect key="frame" x="242" y="203" width="137" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="tintColor" red="1" green="0.71169339856893699" blue="0.16690243319139653" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -130,7 +130,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aux-9n-Eox">
-                                <rect key="frame" x="242" y="319" width="137" height="74"/>
+                                <rect key="frame" x="242" y="308" width="137" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="tintColor" red="0.08680493200126993" green="0.56372588068410279" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -139,7 +139,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loW-Xh-P90">
-                                <rect key="frame" x="30" y="217" width="137" height="74"/>
+                                <rect key="frame" x="30" y="203" width="137" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="tintColor" red="0.45119435817742004" green="0.24912391084125707" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -165,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ix8-kU-WMv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2720" y="-276"/>
+            <point key="canvasLocation" x="2718.840579710145" y="-276.5625"/>
         </scene>
         <!--Map-->
         <scene sceneID="WGt-a1-kiM">
