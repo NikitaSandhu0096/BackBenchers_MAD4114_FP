@@ -41,11 +41,9 @@ class NotesViewController: UIViewController {
 extension NotesViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NotesCell")
-        cell?.textLabel?.text = ""
+        cell?.textLabel?.text = "Notes"
         return cell!
     }
-    
-    
     
     func numberOfSections(in tableView: UITableView) -> Int{
         return 1
@@ -55,6 +53,11 @@ extension NotesViewController : UITableViewDelegate, UITableViewDataSource{
         return 1
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let subjectNotesViewController = sb.instantiateViewController(identifier: "SubjectNotesViewController") as! SubjectNotesViewController
+        self.navigationController?.pushViewController(subjectNotesViewController, animated: true)
+    }
     
     
     
