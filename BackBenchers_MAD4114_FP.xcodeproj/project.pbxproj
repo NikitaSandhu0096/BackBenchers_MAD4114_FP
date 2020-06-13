@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE57BF36249418CA00735498 /* SubjectNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE57BF35249418CA00735498 /* SubjectNotesViewController.swift */; };
+		EE57BF382494900000735498 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE57BF372494900000735498 /* NewNoteViewController.swift */; };
 		EEB1E538248EDBDB00C024E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB1E537248EDBDB00C024E6 /* AppDelegate.swift */; };
 		EEB1E53A248EDBDB00C024E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB1E539248EDBDB00C024E6 /* SceneDelegate.swift */; };
 		EEB1E53C248EDBDB00C024E6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB1E53B248EDBDB00C024E6 /* LoginViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		EE57BF35249418CA00735498 /* SubjectNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectNotesViewController.swift; sourceTree = "<group>"; };
+		EE57BF372494900000735498 /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		EEB1E534248EDBDB00C024E6 /* BackBenchers_MAD4114_FP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackBenchers_MAD4114_FP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEB1E537248EDBDB00C024E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEB1E539248EDBDB00C024E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				EEB1E53B248EDBDB00C024E6 /* LoginViewController.swift */,
 				EEB1E54E249017B000C024E6 /* NotesViewController.swift */,
 				EE57BF35249418CA00735498 /* SubjectNotesViewController.swift */,
+				EE57BF372494900000735498 /* NewNoteViewController.swift */,
 				EEB1E53D248EDBDB00C024E6 /* Main.storyboard */,
 				EEB1E540248EDBDE00C024E6 /* Assets.xcassets */,
 				EEB1E542248EDBDE00C024E6 /* LaunchScreen.storyboard */,
@@ -161,6 +164,7 @@
 				EE57BF36249418CA00735498 /* SubjectNotesViewController.swift in Sources */,
 				EEB1E538248EDBDB00C024E6 /* AppDelegate.swift in Sources */,
 				EEB1E53A248EDBDB00C024E6 /* SceneDelegate.swift in Sources */,
+				EE57BF382494900000735498 /* NewNoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

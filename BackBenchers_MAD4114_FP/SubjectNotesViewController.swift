@@ -17,7 +17,12 @@ class SubjectNotesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func bbAddNewNote(_ sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let newNoteVC = sb.instantiateViewController(identifier: "NewNoteViewController") as! NewNoteViewController
+        self.navigationController?.pushViewController(newNoteVC, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
