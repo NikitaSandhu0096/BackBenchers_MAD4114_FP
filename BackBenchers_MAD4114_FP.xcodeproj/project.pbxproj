@@ -20,7 +20,7 @@
 		EEB1E53F248EDBDB00C024E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB1E53D248EDBDB00C024E6 /* Main.storyboard */; };
 		EEB1E541248EDBDE00C024E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEB1E540248EDBDE00C024E6 /* Assets.xcassets */; };
 		EEB1E544248EDBDE00C024E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEB1E542248EDBDE00C024E6 /* LaunchScreen.storyboard */; };
-		EEB1E54F249017B000C024E6 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB1E54E249017B000C024E6 /* NotesViewController.swift */; };
+		EEB1E54F249017B000C024E6 /* SubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB1E54E249017B000C024E6 /* SubjectsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,7 @@
 		EEB1E540248EDBDE00C024E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEB1E543248EDBDE00C024E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEB1E545248EDBDE00C024E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEB1E54E249017B000C024E6 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		EEB1E54E249017B000C024E6 /* SubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				EEB1E53B248EDBDB00C024E6 /* LoginViewController.swift */,
-				EEB1E54E249017B000C024E6 /* NotesViewController.swift */,
+				EEB1E54E249017B000C024E6 /* SubjectsViewController.swift */,
 				EE57BF35249418CA00735498 /* SubjectNotesViewController.swift */,
 				EE57BF372494900000735498 /* NewNoteViewController.swift */,
 			);
@@ -178,7 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEB1E54F249017B000C024E6 /* NotesViewController.swift in Sources */,
+				EEB1E54F249017B000C024E6 /* SubjectsViewController.swift in Sources */,
 				EEB1E53C248EDBDB00C024E6 /* LoginViewController.swift in Sources */,
 				EE57BF36249418CA00735498 /* SubjectNotesViewController.swift in Sources */,
 				9BFF80CF24968452002C9DC2 /* Notes+CoreDataClass.swift in Sources */,
