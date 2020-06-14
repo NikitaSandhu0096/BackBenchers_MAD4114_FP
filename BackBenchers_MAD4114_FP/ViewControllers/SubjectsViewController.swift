@@ -10,41 +10,31 @@ import UIKit
 import CoreData
 
 class SubjectsViewController: UIViewController {
-    @IBOutlet weak var tblNotes: UITableView!
     
-    var dataManager : NSManagedObjectContext!
+    @IBOutlet weak var tblSubjects: UITableView!
+    let appDelegate = AppDelegate.getDelegate()
     var subjects = [Subjects]()
-    
-    func fetchSubjects()  {
-        do {
-            if let result = try dataManager.fetch(Subjects.fetchRequest()) as? [Subjects]{
-                subjects = result
-            }
-        } catch  {
-            print ("Error retrieving data")
-        }
-    }
-    
-    func addSubject(subjectName:String) {
-        let newEntity = NSEntityDescription.insertNewObject(forEntityName: "Subject", into: dataManager) as? Subjects
-        newEntity?.subjectName = subjectName
-
-        do {
-            try self.dataManager.save()
-        } catch  {
-            print ("Error saving data")
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        dataManager = appDelegate.persistentContainer.viewContext
-        fetchSubjects()
+    }
+    
+    func reloadData() {
+        if let data = Subjects.fetchData(){
+            subjects = data
+        }
+        tblSubjects.reloadData();
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        appDelegate.saveContext();
     }
 
     @IBAction func bbAdd(_ sender: UIBarButtonItem) {
-        
         //https://stackoverflow.com/questions/31922349/how-to-add-textfield-to-uialertcontroller-in-swift/31922603
         let alert = UIAlertController(title: "New Subject", message: "Enter a subject name for this folder.", preferredStyle: UIAlertController.Style.alert)
         
@@ -52,10 +42,10 @@ class SubjectsViewController: UIViewController {
             textSubject.placeholder = "Subject Name"
         }
         alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
+        
         alert.addAction(.init(title: "Save", style: .default, handler: { (action) in
-            self.addSubject(subjectName: (alert.textFields?[0].text)!)
-            self.fetchSubjects()
-            self.tblNotes.reloadData()
+            Subjects.addSubject(subjectName: (alert.textFields?[0].text)!)
+            self.reloadData()
         }))
         
         self.present(alert, animated: true, completion: nil)
@@ -73,7 +63,7 @@ class SubjectsViewController: UIViewController {
 
 }
 
-extension NotesViewController : UITableViewDelegate, UITableViewDataSource{
+extension SubjectsViewController : UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int{
         return 1
     }
@@ -88,11 +78,22 @@ extension NotesViewController : UITableViewDelegate, UITableViewDataSource{
         return cell!
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let subjectNotesViewController = sb.instantiateViewController(identifier: "SubjectNotesViewController") as! SubjectNotesViewController
+        let subjectNotesViewController = UIStoryboard.getViewController(identifier: "SubjectNotesViewController") as! SubjectNotesViewController
+        
         self.navigationController?.pushViewController(subjectNotesViewController, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            let subject = subjects[indexPath.row]
+            Subjects.deleteSubject(s: subject)
+            reloadData()
+        }
+        
+    }
 }
