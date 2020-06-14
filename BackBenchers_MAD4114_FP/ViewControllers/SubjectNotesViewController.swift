@@ -22,6 +22,13 @@ class SubjectNotesViewController: UIViewController {
         let newNoteVC = sb.instantiateViewController(identifier: "NewNoteViewController") as! NewNoteViewController
         self.navigationController?.pushViewController(newNoteVC, animated: true)
     }
+    @IBAction func bbSort(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Sort", message: "Select an option to sort the notes", preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: "Title", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Date/Time", style: .default, handler: nil))
+                alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation
