@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B51FB102495508A0089EA00 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B51FB0E2495508A0089EA00 /* Model.xcdatamodeld */; };
+		9B51FB37249570740089EA00 /* Subjects+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51FB33249570740089EA00 /* Subjects+CoreDataClass.swift */; };
+		9B51FB38249570740089EA00 /* Subjects+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51FB34249570740089EA00 /* Subjects+CoreDataProperties.swift */; };
+		9B51FB39249570740089EA00 /* Notes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51FB35249570740089EA00 /* Notes+CoreDataClass.swift */; };
+		9B51FB3A249570740089EA00 /* Notes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B51FB36249570740089EA00 /* Notes+CoreDataProperties.swift */; };
 		EE57BF36249418CA00735498 /* SubjectNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE57BF35249418CA00735498 /* SubjectNotesViewController.swift */; };
 		EE57BF382494900000735498 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE57BF372494900000735498 /* NewNoteViewController.swift */; };
 		EEB1E538248EDBDB00C024E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB1E537248EDBDB00C024E6 /* AppDelegate.swift */; };
@@ -19,6 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B51FB0F2495508A0089EA00 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		9B51FB33249570740089EA00 /* Subjects+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		9B51FB34249570740089EA00 /* Subjects+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		9B51FB35249570740089EA00 /* Notes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		9B51FB36249570740089EA00 /* Notes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		EE57BF35249418CA00735498 /* SubjectNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectNotesViewController.swift; sourceTree = "<group>"; };
 		EE57BF372494900000735498 /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		EEB1E534248EDBDB00C024E6 /* BackBenchers_MAD4114_FP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackBenchers_MAD4114_FP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +64,18 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		9B51FB1A249561770089EA00 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9B51FB33249570740089EA00 /* Subjects+CoreDataClass.swift */,
+				9B51FB34249570740089EA00 /* Subjects+CoreDataProperties.swift */,
+				9B51FB35249570740089EA00 /* Notes+CoreDataClass.swift */,
+				9B51FB36249570740089EA00 /* Notes+CoreDataProperties.swift */,
+				9B51FB0E2495508A0089EA00 /* Model.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		EEB1E52B248EDBDB00C024E6 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +95,7 @@
 		EEB1E536248EDBDB00C024E6 /* BackBenchers_MAD4114_FP */ = {
 			isa = PBXGroup;
 			children = (
+				9B51FB1A249561770089EA00 /* Data */,
 				9B51FB0D24954D6B0089EA00 /* ViewControllers */,
 				EEB1E537248EDBDB00C024E6 /* AppDelegate.swift */,
 				EEB1E539248EDBDB00C024E6 /* SceneDelegate.swift */,
@@ -158,8 +181,13 @@
 				EEB1E54F249017B000C024E6 /* NotesViewController.swift in Sources */,
 				EEB1E53C248EDBDB00C024E6 /* LoginViewController.swift in Sources */,
 				EE57BF36249418CA00735498 /* SubjectNotesViewController.swift in Sources */,
+				9B51FB39249570740089EA00 /* Notes+CoreDataClass.swift in Sources */,
+				9B51FB102495508A0089EA00 /* Model.xcdatamodeld in Sources */,
 				EEB1E538248EDBDB00C024E6 /* AppDelegate.swift in Sources */,
 				EEB1E53A248EDBDB00C024E6 /* SceneDelegate.swift in Sources */,
+				9B51FB3A249570740089EA00 /* Notes+CoreDataProperties.swift in Sources */,
+				9B51FB38249570740089EA00 /* Subjects+CoreDataProperties.swift in Sources */,
+				9B51FB37249570740089EA00 /* Subjects+CoreDataClass.swift in Sources */,
 				EE57BF382494900000735498 /* NewNoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +386,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9B51FB0E2495508A0089EA00 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9B51FB0F2495508A0089EA00 /* Model.xcdatamodel */,
+			);
+			currentVersion = 9B51FB0F2495508A0089EA00 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EEB1E52C248EDBDB00C024E6 /* Project object */;
 }
