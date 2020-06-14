@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9B51FB102495508A0089EA00 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B51FB0E2495508A0089EA00 /* Model.xcdatamodeld */; };
+		9BFF80CD24968452002C9DC2 /* Subjects+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF80C924968452002C9DC2 /* Subjects+CoreDataClass.swift */; };
+		9BFF80CE24968452002C9DC2 /* Subjects+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF80CA24968452002C9DC2 /* Subjects+CoreDataProperties.swift */; };
+		9BFF80CF24968452002C9DC2 /* Notes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF80CB24968452002C9DC2 /* Notes+CoreDataClass.swift */; };
+		9BFF80D024968452002C9DC2 /* Notes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF80CC24968452002C9DC2 /* Notes+CoreDataProperties.swift */; };
 		EE57BF36249418CA00735498 /* SubjectNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE57BF35249418CA00735498 /* SubjectNotesViewController.swift */; };
 		EE57BF382494900000735498 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE57BF372494900000735498 /* NewNoteViewController.swift */; };
 		EEB1E538248EDBDB00C024E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB1E537248EDBDB00C024E6 /* AppDelegate.swift */; };
@@ -21,6 +25,10 @@
 
 /* Begin PBXFileReference section */
 		9B51FB0F2495508A0089EA00 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		9BFF80C924968452002C9DC2 /* Subjects+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9BFF80CA24968452002C9DC2 /* Subjects+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BFF80CB24968452002C9DC2 /* Notes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9BFF80CC24968452002C9DC2 /* Notes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EE57BF35249418CA00735498 /* SubjectNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectNotesViewController.swift; sourceTree = "<group>"; };
 		EE57BF372494900000735498 /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		EEB1E534248EDBDB00C024E6 /* BackBenchers_MAD4114_FP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackBenchers_MAD4114_FP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +67,10 @@
 		9B51FB1A249561770089EA00 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9BFF80C924968452002C9DC2 /* Subjects+CoreDataClass.swift */,
+				9BFF80CA24968452002C9DC2 /* Subjects+CoreDataProperties.swift */,
+				9BFF80CB24968452002C9DC2 /* Notes+CoreDataClass.swift */,
+				9BFF80CC24968452002C9DC2 /* Notes+CoreDataProperties.swift */,
 				9B51FB0E2495508A0089EA00 /* Model.xcdatamodeld */,
 			);
 			path = Data;
@@ -169,9 +181,13 @@
 				EEB1E54F249017B000C024E6 /* NotesViewController.swift in Sources */,
 				EEB1E53C248EDBDB00C024E6 /* LoginViewController.swift in Sources */,
 				EE57BF36249418CA00735498 /* SubjectNotesViewController.swift in Sources */,
+				9BFF80CF24968452002C9DC2 /* Notes+CoreDataClass.swift in Sources */,
 				9B51FB102495508A0089EA00 /* Model.xcdatamodeld in Sources */,
 				EEB1E538248EDBDB00C024E6 /* AppDelegate.swift in Sources */,
 				EEB1E53A248EDBDB00C024E6 /* SceneDelegate.swift in Sources */,
+				9BFF80D024968452002C9DC2 /* Notes+CoreDataProperties.swift in Sources */,
+				9BFF80CE24968452002C9DC2 /* Subjects+CoreDataProperties.swift in Sources */,
+				9BFF80CD24968452002C9DC2 /* Subjects+CoreDataClass.swift in Sources */,
 				EE57BF382494900000735498 /* NewNoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
