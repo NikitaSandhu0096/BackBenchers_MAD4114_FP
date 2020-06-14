@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func bbLogin(_ sender: UIBarButtonItem) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let customerListVC = sb.instantiateViewController(identifier: "NotesViewController") as! NotesViewController
+        let customerListVC = sb.instantiateViewController(identifier: "SubjectsViewController") as! SubjectsViewController
         self.navigationController?.pushViewController(customerListVC, animated: true)
     }
 }
