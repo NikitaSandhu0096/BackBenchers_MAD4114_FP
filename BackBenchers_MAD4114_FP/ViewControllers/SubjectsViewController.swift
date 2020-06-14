@@ -80,7 +80,7 @@ extension SubjectsViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let subjectNotesViewController = UIStoryboard.getViewController(identifier: "SubjectNotesViewController") as! SubjectNotesViewController
-        
+        subjectNotesViewController.subjectNotes = subjects[indexPath.row].notes
         self.navigationController?.pushViewController(subjectNotesViewController, animated: true)
     }
     

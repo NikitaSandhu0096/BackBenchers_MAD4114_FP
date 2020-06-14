@@ -11,6 +11,8 @@ import UIKit
 class SubjectNotesViewController: UIViewController {
 
     @IBOutlet weak var tblSubjectNotes: UITableView!
+    var subjectNotes:NSSet?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,24 +45,20 @@ class SubjectNotesViewController: UIViewController {
 }
 
 extension SubjectNotesViewController : UITableViewDelegate, UITableViewDataSource{
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SubjectNotesCell")
-        cell?.textLabel?.text = "Subject note"
-        return cell!
-    }
-    
-    
     
     func numberOfSections(in tableView: UITableView) -> Int{
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return subjectNotes!.count
     }
     
-    
-    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SubjectNotesCell")
+        cell?.textLabel?.text = "Subject note"
+        return cell!
+    }
     
 }
 
