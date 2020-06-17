@@ -37,8 +37,22 @@ class SubjectNotesViewController: UIViewController {
     }
     @IBAction func bbSort(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Sort", message: "Select an option to sort the notes", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Title", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Date/Time", style: .default, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Title", style: .default, handler: {(action) in
+            self.subjectNotes = self.subjectNotes.sorted { (note1, note2) -> Bool in
+                return note2.title!.lowercased() < note1.title!.lowercased()
+            }
+            self.tblSubjectNotes.reloadData()
+        }))
+        
+        
+        
+        alert.addAction(UIAlertAction(title: "Date/Time", style: .default, handler: { (action) in
+            self.subjectNotes = self.subjectNotes.sorted { (note1, note2) -> Bool in
+                return note1.timestamp?.compare(note2.timestamp!) == ComparisonResult.orderedDescending
+            }
+            self.tblSubjectNotes.reloadData()
+        }))
         alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
