@@ -15,7 +15,7 @@ public class Subjects: NSManagedObject {
     static func fetchData() -> [Subjects]? {
         let dataManager = AppDelegate.getDelegate().persistentContainer.viewContext
         do {
-            if let result = try dataManager.fetch(Subjects.fetchRequest()) as? [Subjects]{
+            if let result = try dataManager.fetch(Subjects.getFetchRequest()) as? [Subjects]{
                 return result
             }
         } catch  {

@@ -13,8 +13,10 @@ import CoreData
 
 extension Subjects {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Subjects> {
-        return NSFetchRequest<Subjects>(entityName: "Subject")
+    static func getFetchRequest() -> NSFetchRequest<Subjects> {
+        let request = NSFetchRequest<Subjects>(entityName: "Subject")
+        request.includesSubentities = false
+        return request
     }
 
     @NSManaged public var subjectName: String?

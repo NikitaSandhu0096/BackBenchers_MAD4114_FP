@@ -8,10 +8,10 @@
     </entity>
     <entity name="Subject" representedClassName=".Subjects" syncable="YES">
         <attribute name="subjectName" optional="YES" attributeType="String"/>
-        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="subject" inverseEntity="Note"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="subject" inverseEntity="Note"/>
     </entity>
     <elements>
-        <element name="Note" positionX="-54" positionY="-9" width="128" height="103"/>
-        <element name="Subject" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Note" positionX="1.390625" positionY="-9" width="128" height="103"/>
+        <element name="Subject" positionX="-358.40234375" positionY="4.73046875" width="128" height="73"/>
     </elements>
 </model>
