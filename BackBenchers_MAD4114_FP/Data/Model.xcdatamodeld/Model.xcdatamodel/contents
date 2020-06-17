@@ -7,7 +7,7 @@
         <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="notes" inverseEntity="Subject"/>
     </entity>
     <entity name="Subject" representedClassName=".Subjects" syncable="YES">
-        <attribute name="subjectName" attributeType="String"/>
+        <attribute name="subjectName" optional="YES" attributeType="String"/>
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="subject" inverseEntity="Note"/>
     </entity>
     <elements>

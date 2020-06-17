@@ -215,7 +215,7 @@
             </objects>
             <point key="canvasLocation" x="1967" y="504"/>
         </scene>
-        <!--Subject Notes-->
+        <!--Subject Notes View Controller-->
         <scene sceneID="AUa-7a-Mhr">
             <objects>
                 <viewController storyboardIdentifier="SubjectNotesViewController" id="fuh-Ku-YjP" customClass="SubjectNotesViewController" customModule="BackBenchers_MAD4114_FP" customModuleProvider="target" sceneMemberID="viewController">
@@ -277,7 +277,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mav-3X-oCH"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Subject Notes" id="Jgd-QL-z8l">
+                    <navigationItem key="navigationItem" id="Jgd-QL-z8l">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="Vau-5T-oQS">
                                 <connections>
@@ -346,44 +346,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="hFT-xG-oAv">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="hFT-xG-oAv">
                                 <rect key="frame" x="20" y="167" width="374" height="528"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.8805292766512135" green="0.90014288633358785" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2X-1M-NfC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2X-1M-NfC">
                                 <rect key="frame" x="62" y="717.5" width="85" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="Loh-AO-AJ7"/>
+                                    <constraint firstAttribute="height" constant="86" id="xcP-40-Qef"/>
+                                </constraints>
                                 <color key="tintColor" red="0.47895931302378214" green="0.38967464102528604" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" backgroundImage="camera.circle.fill" catalog="system"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k58-76-WpF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k58-76-WpF">
                                 <rect key="frame" x="270" y="717.5" width="85" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="0rb-gg-Taj"/>
+                                </constraints>
                                 <color key="tintColor" red="0.478959313" green="0.38967464099999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" backgroundImage="mic.circle.fill" catalog="system"/>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XfN-6J-asQ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XfN-6J-asQ">
                                 <rect key="frame" x="20" y="110" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.85886055386751348" green="0.89042120672849667" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="3Ba-3o-Bto"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XfN-6J-asQ" firstAttribute="leading" secondItem="hFT-xG-oAv" secondAttribute="leading" id="9eM-pC-K6S"/>
+                            <constraint firstItem="Z2X-1M-NfC" firstAttribute="bottom" secondItem="k58-76-WpF" secondAttribute="bottom" id="DNT-C7-z9a"/>
+                            <constraint firstItem="XfN-6J-asQ" firstAttribute="leading" secondItem="Hlt-hF-bbp" secondAttribute="leadingMargin" id="JRO-cY-hww"/>
+                            <constraint firstItem="XfN-6J-asQ" firstAttribute="trailing" secondItem="Hlt-hF-bbp" secondAttribute="trailingMargin" id="P3L-j8-TAF"/>
+                            <constraint firstItem="RJy-uR-w6T" firstAttribute="trailing" secondItem="k58-76-WpF" secondAttribute="trailing" constant="59" id="RnA-Wx-vmm"/>
+                            <constraint firstItem="Z2X-1M-NfC" firstAttribute="leading" secondItem="RJy-uR-w6T" secondAttribute="leading" constant="62" id="Rwo-OX-1gD"/>
+                            <constraint firstItem="k58-76-WpF" firstAttribute="firstBaseline" secondItem="Z2X-1M-NfC" secondAttribute="firstBaseline" id="UTh-2L-koy"/>
+                            <constraint firstItem="Z2X-1M-NfC" firstAttribute="top" secondItem="k58-76-WpF" secondAttribute="top" id="byG-Jh-5dc"/>
+                            <constraint firstItem="XfN-6J-asQ" firstAttribute="top" secondItem="RJy-uR-w6T" secondAttribute="top" constant="22" id="fAr-qN-8My"/>
+                            <constraint firstItem="Z2X-1M-NfC" firstAttribute="top" secondItem="hFT-xG-oAv" secondAttribute="bottom" constant="22" id="u0d-qJ-uih"/>
+                            <constraint firstItem="hFT-xG-oAv" firstAttribute="top" secondItem="XfN-6J-asQ" secondAttribute="bottom" constant="23" id="uhC-ON-z78"/>
+                            <constraint firstItem="RJy-uR-w6T" firstAttribute="bottom" secondItem="Z2X-1M-NfC" secondAttribute="bottom" constant="10" id="ykB-VW-Ith"/>
+                            <constraint firstItem="XfN-6J-asQ" firstAttribute="trailing" secondItem="hFT-xG-oAv" secondAttribute="trailing" id="yuG-g4-Hd7"/>
+                            <constraint firstItem="Z2X-1M-NfC" firstAttribute="baseline" secondItem="k58-76-WpF" secondAttribute="baseline" id="zix-4S-I71"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RJy-uR-w6T"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Note" id="Yd5-9L-Voa">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="7rn-pm-QBm">
-                            <connections>
-                                <action selector="bbSave:" destination="xEy-oe-T2b" id="eqG-gg-g1o"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="New Note" id="Yd5-9L-Voa"/>
                     <connections>
                         <outlet property="noteData" destination="hFT-xG-oAv" id="Dag-Ak-RFD"/>
                         <outlet property="noteTitle" destination="XfN-6J-asQ" id="dcp-HS-Lih"/>

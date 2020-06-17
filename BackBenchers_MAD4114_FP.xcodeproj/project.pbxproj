@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B272D6E249A7114005C81AD /* Date=Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B272D6D249A7114005C81AD /* Date=Extension.swift */; };
 		9B51FB102495508A0089EA00 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B51FB0E2495508A0089EA00 /* Model.xcdatamodeld */; };
 		9BFF80CD24968452002C9DC2 /* Subjects+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF80C924968452002C9DC2 /* Subjects+CoreDataClass.swift */; };
 		9BFF80CE24968452002C9DC2 /* Subjects+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF80CA24968452002C9DC2 /* Subjects+CoreDataProperties.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B272D6D249A7114005C81AD /* Date=Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date=Extension.swift"; sourceTree = "<group>"; };
 		9B51FB0F2495508A0089EA00 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		9BFF80C924968452002C9DC2 /* Subjects+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9BFF80CA24968452002C9DC2 /* Subjects+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				9BFF80D224969762002C9DC2 /* UIStoryboard+Extension.swift */,
 				9BFF80D4249699A1002C9DC2 /* AppDelegate+Extension.swift */,
+				9B272D6D249A7114005C81AD /* Date=Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				9BFF80D024968452002C9DC2 /* Notes+CoreDataProperties.swift in Sources */,
 				9BFF80CE24968452002C9DC2 /* Subjects+CoreDataProperties.swift in Sources */,
 				9BFF80CD24968452002C9DC2 /* Subjects+CoreDataClass.swift in Sources */,
+				9B272D6E249A7114005C81AD /* Date=Extension.swift in Sources */,
 				9BFF80D5249699A1002C9DC2 /* AppDelegate+Extension.swift in Sources */,
 				EE57BF382494900000735498 /* NewNoteViewController.swift in Sources */,
 			);

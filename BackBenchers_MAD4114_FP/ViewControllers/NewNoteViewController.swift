@@ -9,15 +9,48 @@
 import UIKit
 
 class NewNoteViewController: UIViewController {
-
+    
+    let appDelegate = AppDelegate.getDelegate()
+    var selectedSubject:Subjects?
+    var selectedNote:Notes?
+    
+    @IBOutlet weak var noteTitle: UITextField!
+    @IBOutlet weak var noteData: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        noteData.becomeFirstResponder()
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func bbSave(_ sender: UIBarButtonItem) {
-        navigationController?.popViewController(animated: true)
+    func createNewNote() {
+        let newNote = Notes(context: appDelegate.persistentContainer.viewContext)
+        newNote.title = noteTitle.text
+        newNote.data = noteData.text
+        newNote.timestamp = Date()
+        newNote.subject = selectedSubject
+        appDelegate.saveContext()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let note = selectedNote{
+            noteTitle.text = note.title
+            noteData.text = note.data
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if let note = selectedNote, let title = noteTitle.text, let data = noteData.text{
+            note.title = title
+            note.data = data
+            note.timestamp = Date()
+            appDelegate.saveContext()
+        }
+        else if selectedNote == nil{
+            if !noteTitle.text!.isEmpty || !noteData.text!.isEmpty{
+                createNewNote()
+            }
+        }
     }
     
     /*

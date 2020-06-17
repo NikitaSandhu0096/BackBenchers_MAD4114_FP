@@ -2,7 +2,7 @@
 //  Subjects+CoreDataProperties.swift
 //  BackBenchers_MAD4114_FP
 //
-//  Created by Kashyap Jhaveri on 2020-06-14.
+//  Created by Kashyap Jhaveri on 2020-06-17.
 //  Copyright © 2020 Nikita Sandhu. All rights reserved.
 //
 //

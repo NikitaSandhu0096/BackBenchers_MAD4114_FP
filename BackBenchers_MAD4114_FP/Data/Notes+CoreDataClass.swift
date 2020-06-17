@@ -12,5 +12,9 @@ import CoreData
 
 
 public class Notes: Subjects {
-
+    static func deleteNote(note:Notes){
+        let dataManager = AppDelegate.getDelegate().persistentContainer.viewContext
+        dataManager.delete(note)
+    }
+    
 }

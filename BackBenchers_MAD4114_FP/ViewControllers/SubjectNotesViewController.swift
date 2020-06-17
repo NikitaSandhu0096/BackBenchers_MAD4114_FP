@@ -11,25 +11,37 @@ import UIKit
 class SubjectNotesViewController: UIViewController {
 
     @IBOutlet weak var tblSubjectNotes: UITableView!
-    var subjectNotes:NSSet?
+    var subject:Subjects?
+    var subjectNotes:[Notes] = [Notes]()
+    
+    func reloadData() {
+        subjectNotes = subject!.notes?.allObjects as! [Notes]
+        tblSubjectNotes.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "\(subject?.subjectName ?? "Subject") Notes"
+        self.reloadData()
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.reloadData()
+    }
+    
     @IBAction func bbAddNewNote(_ sender: UIBarButtonItem) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let newNoteVC = sb.instantiateViewController(identifier: "NewNoteViewController") as! NewNoteViewController
+        let newNoteVC = UIStoryboard.getViewController(identifier: "NewNoteViewController") as! NewNoteViewController
+        newNoteVC.selectedSubject = subject
         self.navigationController?.pushViewController(newNoteVC, animated: true)
     }
     @IBAction func bbSort(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Sort", message: "Select an option to sort the notes", preferredStyle: .actionSheet)
-                alert.addAction(UIAlertAction(title: "Title", style: .default, handler: nil))
-                alert.addAction(UIAlertAction(title: "Date/Time", style: .default, handler: nil))
-                alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "Title", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Date/Time", style: .default, handler: nil))
+        alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     /*
@@ -51,14 +63,35 @@ extension SubjectNotesViewController : UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subjectNotes!.count
+        return subject!.notes!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubjectNotesCell")
-        cell?.textLabel?.text = "Subject note"
+        let note = subjectNotes[indexPath.row]
+        
+        cell?.textLabel?.text = note.title!.isEmpty ? note.data : note.title
+        cell?.detailTextLabel?.text = Date.getStringDate(dateFormate: "HH:mm E, d MMM y", date: note.timestamp!)
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let newNoteVC = UIStoryboard.getViewController(identifier: "NewNoteViewController") as! NewNoteViewController
+        newNoteVC.selectedSubject = subject
+        newNoteVC.selectedNote = subjectNotes[indexPath.row]
+        self.navigationController?.pushViewController(newNoteVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            let note = subjectNotes[indexPath.row]
+            Notes.deleteNote(note: note)
+            self.reloadData()
+        }
+    }
 }
 
