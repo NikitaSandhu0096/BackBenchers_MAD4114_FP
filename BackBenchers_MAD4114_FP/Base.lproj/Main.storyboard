@@ -44,7 +44,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="tintColor" red="1" green="0.25618366274301263" blue="0.53030490796058927" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="4" backgroundImage="square.and.arrow.down.fill" catalog="system">
+                                <state key="normal" title="4" backgroundImage="person.2.square.stack" catalog="system">
                                     <color key="titleColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -53,7 +53,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="tintColor" red="0.28870891198023563" green="0.43968277127299138" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="4" backgroundImage="square.and.arrow.down.fill" catalog="system">
+                                <state key="normal" title="4" backgroundImage="photo" catalog="system">
                                     <color key="titleColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -71,7 +71,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="tintColor" red="1" green="0.54780689409749006" blue="0.054540967715655087" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="4" backgroundImage="square.and.arrow.down.fill" catalog="system">
+                                <state key="normal" title="4" backgroundImage="doc.text" catalog="system">
                                     <color key="titleColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -317,9 +317,12 @@
     </scenes>
     <resources>
         <image name="camera.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="map" catalog="system" width="128" height="113"/>
         <image name="mic.circle.fill" catalog="system" width="128" height="121"/>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="person.2.square.stack" catalog="system" width="113" height="128"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <image name="square.and.arrow.down.fill" catalog="system" width="121" height="128"/>
     </resources>
 </document>
