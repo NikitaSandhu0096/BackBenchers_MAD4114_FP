@@ -14,9 +14,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
     @IBOutlet weak var myMap: MKMapView!
     
-    let locationManager = CLLocationManager()
+    var locationManager = CLLocationManager()
     var myAnnotations = [CLLocation]()
     var points = [CLLocationCoordinate2D]()
+    var time = Timer()
+    
+    var currentLocation = CLLocation()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +30,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locationManager.startUpdatingLocation()
         myMap.showsUserLocation = true
         myMap.delegate = self
+        addPin()
+        
         
         // Do any additional setup after loading the view.
     }
+    @objc func addPin(){
+        let location = CLLocation(latitude: 43.589046, longitude: -79.644119)
+        myAnnotations.append(location)
+        let myAnnotation = MKPointAnnotation()
+        myAnnotation.coordinate = CLLocationCoordinate2D(latitude: myAnnotations[0].coordinate.latitude, longitude: myAnnotations[0].coordinate.longitude)
+        myAnnotation.title = "Current Location"
+        myMap.addAnnotation(myAnnotation)
+    }
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        let zoomArea = MKCoordinateRegion(center: self.myMap.userLocation.coordinate, span: MKCoordinateSpan (latitudeDelta: 0.05, longitudeDelta: 0.05)); self.myMap.setRegion(zoomArea, animated: true)
+        let zoomArea = MKCoordinateRegion(center: self.myMap.userLocation.coordinate, span: MKCoordinateSpan (latitudeDelta: 0.05, longitudeDelta: 0.05));
+        self.myMap.setRegion(zoomArea, animated: true)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
