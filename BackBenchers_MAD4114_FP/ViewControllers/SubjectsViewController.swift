@@ -41,6 +41,7 @@ class SubjectsViewController: UIViewController {
         alert.addTextField { (textSubject : UITextField!) -> Void in
             textSubject.placeholder = "Subject Name"
         }
+        
         alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
         
         alert.addAction(.init(title: "Save", style: .default, handler: { (action) in
