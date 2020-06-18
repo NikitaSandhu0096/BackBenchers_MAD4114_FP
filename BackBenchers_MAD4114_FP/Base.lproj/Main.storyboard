@@ -113,18 +113,27 @@
         <!--Map-->
         <scene sceneID="WGt-a1-kiM">
             <objects>
-                <viewController id="crG-81-rO7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="crG-81-rO7" customClass="MapViewController" customModule="BackBenchers_MAD4114_FP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ehs-EM-7tt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BED-1z-k8f">
+                                <rect key="frame" x="20" y="104" width="374" height="709"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="vCC-rv-ZuL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="U4U-OB-Sj0"/>
+                    <connections>
+                        <outlet property="myMap" destination="BED-1z-k8f" id="kF1-CQ-mwz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbX-AN-LRU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1967" y="504"/>
+            <point key="canvasLocation" x="1966.6666666666667" y="503.57142857142856"/>
         </scene>
         <!--Subject Notes View Controller-->
         <scene sceneID="AUa-7a-Mhr">

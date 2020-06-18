@@ -15,6 +15,7 @@
 		9BFF80D024968452002C9DC2 /* Notes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF80CC24968452002C9DC2 /* Notes+CoreDataProperties.swift */; };
 		9BFF80D324969762002C9DC2 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF80D224969762002C9DC2 /* UIStoryboard+Extension.swift */; };
 		9BFF80D5249699A1002C9DC2 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF80D4249699A1002C9DC2 /* AppDelegate+Extension.swift */; };
+		EE48ACCE249BED14004709BC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE48ACCD249BED14004709BC /* MapViewController.swift */; };
 		EE57BF36249418CA00735498 /* SubjectNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE57BF35249418CA00735498 /* SubjectNotesViewController.swift */; };
 		EE57BF382494900000735498 /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE57BF372494900000735498 /* NewNoteViewController.swift */; };
 		EEB1E538248EDBDB00C024E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB1E537248EDBDB00C024E6 /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		9BFF80CC24968452002C9DC2 /* Notes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BFF80D224969762002C9DC2 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		9BFF80D4249699A1002C9DC2 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
+		EE48ACCD249BED14004709BC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EE57BF35249418CA00735498 /* SubjectNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectNotesViewController.swift; sourceTree = "<group>"; };
 		EE57BF372494900000735498 /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		EEB1E534248EDBDB00C024E6 /* BackBenchers_MAD4114_FP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackBenchers_MAD4114_FP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +65,7 @@
 				EEB1E54E249017B000C024E6 /* SubjectsViewController.swift */,
 				EE57BF35249418CA00735498 /* SubjectNotesViewController.swift */,
 				EE57BF372494900000735498 /* NewNoteViewController.swift */,
+				EE48ACCD249BED14004709BC /* MapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				9B272D6E249A7114005C81AD /* Date=Extension.swift in Sources */,
 				9BFF80D5249699A1002C9DC2 /* AppDelegate+Extension.swift in Sources */,
 				EE57BF382494900000735498 /* NewNoteViewController.swift in Sources */,
+				EE48ACCE249BED14004709BC /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
