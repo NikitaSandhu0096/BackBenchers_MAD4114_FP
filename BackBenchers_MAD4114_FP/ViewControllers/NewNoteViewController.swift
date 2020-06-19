@@ -53,6 +53,21 @@ class NewNoteViewController: UIViewController {
         }
     }
     
+    @IBAction func addPhoto(_ sender: UIButton) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: nil))
+            
+        alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func addAudio(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 
