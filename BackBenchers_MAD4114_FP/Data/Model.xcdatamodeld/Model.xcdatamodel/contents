@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Image" representedClassName="Image" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="images" inverseEntity="Note"/>
+    </entity>
     <entity name="Note" representedClassName=".Notes" parentEntity="Subject" syncable="YES">
         <attribute name="data" optional="YES" attributeType="String"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Image" inverseName="note" inverseEntity="Image"/>
         <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="notes" inverseEntity="Subject"/>
     </entity>
     <entity name="Subject" representedClassName=".Subjects" syncable="YES">
@@ -11,7 +16,8 @@
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="subject" inverseEntity="Note"/>
     </entity>
     <elements>
-        <element name="Note" positionX="1.390625" positionY="-9" width="128" height="103"/>
+        <element name="Note" positionX="1.390625" positionY="-9" width="128" height="118"/>
         <element name="Subject" positionX="-358.40234375" positionY="4.73046875" width="128" height="73"/>
+        <element name="Image" positionX="-171" positionY="36" width="128" height="73"/>
     </elements>
 </model>

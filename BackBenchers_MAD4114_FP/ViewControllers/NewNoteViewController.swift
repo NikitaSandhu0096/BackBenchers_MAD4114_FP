@@ -66,43 +66,33 @@ class NewNoteViewController: UIViewController {
     @IBAction func addPhoto(_ sender: UIButton) {
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
                 
-                alert.addAction(.init(title: "Take a Picture", style: .default, handler: { (action:UIAlertAction) in
-                    if UIImagePickerController.isSourceTypeAvailable(.camera){
-                        let picker = UIImagePickerController()
-                        picker.delegate = self
-                        picker.sourceType = .camera
-                        self.present(picker, animated: true, completion: nil)
-                    }
-                }))
-                
-                alert.addAction(.init(title: "Choose from Library", style: .default, handler: { (action:UIAlertAction) in
-                    
-                    if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-                        let picker = UIImagePickerController()
-                        picker.sourceType = .savedPhotosAlbum
-                        self.present(picker, animated: true, completion: nil)
-                    }
-                    
-                }))
-                
-                alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
-                
-                self.present(alert, animated: true, completion: nil)
+        alert.addAction(.init(title: "Take a Picture", style: .default, handler: { (action:UIAlertAction) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera){
+                let picker = UIImagePickerController()
+                picker.delegate = self
+                picker.sourceType = .camera
+                self.present(picker, animated: true, completion: nil)
+            }
+        }))
+        
+        alert.addAction(.init(title: "Choose from Library", style: .default, handler: { (action:UIAlertAction) in
+            if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+                let picker = UIImagePickerController()
+                picker.sourceType = .savedPhotosAlbum
+                self.present(picker, animated: true, completion: nil)
+            }
+            
+        }))
+        
+        alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     
     @IBAction func addAudio(_ sender: UIButton) {
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
