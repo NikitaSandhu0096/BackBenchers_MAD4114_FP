@@ -17,10 +17,20 @@ class NewNoteViewController: UIViewController {
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteData: UITextView!
     
+    func checkForCamera() {
+        if !UIImagePickerController.isSourceTypeAvailable(.camera){
+            let alertController = UIAlertController.init(title: nil, message: "No camera available.", preferredStyle: .alert)
+            let okAction = UIAlertAction.init(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         noteData.becomeFirstResponder()
         // Do any additional setup after loading the view.
+        checkForCamera()
     }
     
     func createNewNote() {
@@ -54,16 +64,32 @@ class NewNoteViewController: UIViewController {
     }
     
     @IBAction func addPhoto(_ sender: UIButton) {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: nil))
-        
-        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: nil))
-            
-        alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+                
+                alert.addAction(.init(title: "Take a Picture", style: .default, handler: { (action:UIAlertAction) in
+                    if UIImagePickerController.isSourceTypeAvailable(.camera){
+                        let picker = UIImagePickerController()
+                        picker.delegate = self
+                        picker.sourceType = .camera
+                        self.present(picker, animated: true, completion: nil)
+                    }
+                }))
+                
+                alert.addAction(.init(title: "Choose from Library", style: .default, handler: { (action:UIAlertAction) in
+                    
+                    if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+                        let picker = UIImagePickerController()
+                        picker.sourceType = .savedPhotosAlbum
+                        self.present(picker, animated: true, completion: nil)
+                    }
+                    
+                }))
+                
+                alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
     }
+    
     
     @IBAction func addAudio(_ sender: UIButton) {
     }
@@ -78,4 +104,11 @@ class NewNoteViewController: UIViewController {
     }
     */
 
+}
+
+extension NewNoteViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+    }
 }
