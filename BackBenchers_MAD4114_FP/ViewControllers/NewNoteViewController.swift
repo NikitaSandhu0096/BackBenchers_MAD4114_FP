@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class NewNoteViewController: UIViewController {
     
@@ -15,9 +16,19 @@ class NewNoteViewController: UIViewController {
     var selectedNote:Notes?
     
     var selectedImages = [UIImage]()
+    var locationManager = CLLocationManager()
+    
+    var locationCoords : CLLocationCoordinate2D?
     
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteData: UITextView!
+    
+    func initLocation() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.startUpdatingLocation()
+        locationManager.requestWhenInUseAuthorization()
+    }
     
     func checkForCamera() {
         if !UIImagePickerController.isSourceTypeAvailable(.camera){
@@ -34,6 +45,7 @@ class NewNoteViewController: UIViewController {
         noteData.becomeFirstResponder()
         // Do any additional setup after loading the view.
         //checkForCamera()
+        initLocation()
     }
     
     func createNewNote() {
@@ -42,6 +54,9 @@ class NewNoteViewController: UIViewController {
         newNote.data = noteData.text
         newNote.timestamp = Date()
         newNote.subject = selectedSubject
+        newNote.lat = (locationCoords?.latitude ?? 0.0) as Double
+        newNote.long = (locationCoords?.longitude ?? 0.0) as Double
+        
         
         for image in selectedImages {
             let instance = Attachment(context: appDelegate.persistentContainer.viewContext)
@@ -116,8 +131,6 @@ class NewNoteViewController: UIViewController {
         }
         
     }
-    
-
 }
 
 extension NewNoteViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -136,5 +149,16 @@ extension NewNoteViewController : UIImagePickerControllerDelegate, UINavigationC
         }
         
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+
+extension NewNoteViewController : CLLocationManagerDelegate{
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = manager.location?.coordinate else {
+            return
+        }
+        self.locationCoords = location
     }
 }

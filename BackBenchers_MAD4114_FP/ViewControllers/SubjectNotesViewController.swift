@@ -99,7 +99,7 @@ extension SubjectNotesViewController : UITableViewDelegate, UITableViewDataSourc
         else{
             note = subjectNotes[indexPath.row]
         }
-        
+        print(note.lat, note.long)
         cell?.textLabel?.text = note.title!.isEmpty ? note.data : note.title
         cell?.detailTextLabel?.text = Date.getStringDate(dateFormate: "HH:mm E, d MMM y", date: note.timestamp!)
         return cell!
