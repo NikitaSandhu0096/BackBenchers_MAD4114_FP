@@ -15,7 +15,7 @@ class NewNoteViewController: UIViewController {
     var selectedSubject:Subjects?
     var selectedNote:Notes?
     
-    var selectedImages = [UIImage]()
+    private var selectedImages = [UIImage]()
     
     var locationManager = CLLocationManager()
     var locationCoords : CLLocationCoordinate2D?
