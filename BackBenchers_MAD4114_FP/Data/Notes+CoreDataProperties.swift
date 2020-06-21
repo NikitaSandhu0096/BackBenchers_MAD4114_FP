@@ -13,8 +13,10 @@ import CoreData
 
 extension Notes {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Notes> {
-        return NSFetchRequest<Notes>(entityName: "Note")
+    static func fetchRequest() -> NSFetchRequest<Notes> {
+        let request = NSFetchRequest<Notes>(entityName: "Note")
+        request.includesSubentities = false
+        return request
     }
 
     @NSManaged public var data: String?

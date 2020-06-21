@@ -13,6 +13,18 @@ import CoreData
 
 public class Notes: Subjects {
     
+    static func fetchNotes() -> [Notes]? {
+        let dataManager = AppDelegate.getDelegate().persistentContainer.viewContext
+        do {
+            if let result = try dataManager.fetch(Notes.fetchRequest()) as? [Notes] {
+                return result
+            }
+        } catch  {
+            print ("Error retrieving data")
+        }
+        return nil
+    }
+    
     func addAttachment(a:Attachment) {
         let images = self.mutableSetValue(forKey: "attachments")
         images.add(a)

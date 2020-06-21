@@ -39,6 +39,7 @@
 		9B63BE43249E8D8000D52E1E /* Attachment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attachment+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9B63BE48249E911900D52E1E /* NotesAttachementCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAttachementCollectionViewController.swift; sourceTree = "<group>"; };
 		9B63BE4B249FBCFF00D52E1E /* NoteAttachmentPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAttachmentPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		9B63BE4E24A00D7F00D52E1E /* Toronto.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Toronto.gpx; sourceTree = "<group>"; };
 		9BFF80C924968452002C9DC2 /* Subjects+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9BFF80CA24968452002C9DC2 /* Subjects+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BFF80CB24968452002C9DC2 /* Notes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -104,6 +105,14 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		9B63BE4D24A00D4400D52E1E /* Custom Locations */ = {
+			isa = PBXGroup;
+			children = (
+				9B63BE4E24A00D7F00D52E1E /* Toronto.gpx */,
+			);
+			path = "Custom Locations";
+			sourceTree = "<group>";
+		};
 		9BFF80D124969740002C9DC2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +142,7 @@
 		EEB1E536248EDBDB00C024E6 /* BackBenchers_MAD4114_FP */ = {
 			isa = PBXGroup;
 			children = (
+				9B63BE4D24A00D4400D52E1E /* Custom Locations */,
 				9BFF80D124969740002C9DC2 /* Extensions */,
 				9B51FB1A249561770089EA00 /* Data */,
 				9B51FB0D24954D6B0089EA00 /* ViewControllers */,

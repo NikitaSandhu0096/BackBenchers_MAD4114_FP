@@ -16,8 +16,8 @@ class NewNoteViewController: UIViewController {
     var selectedNote:Notes?
     
     var selectedImages = [UIImage]()
-    var locationManager = CLLocationManager()
     
+    var locationManager = CLLocationManager()
     var locationCoords : CLLocationCoordinate2D?
     
     @IBOutlet weak var noteTitle: UITextField!
