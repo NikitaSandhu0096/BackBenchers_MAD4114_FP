@@ -114,6 +114,7 @@ extension SubjectNotesViewController : UITableViewDelegate, UITableViewDataSourc
         else{
             newNoteVC.selectedNote = subjectNotes[indexPath.row]
         }
+        newNoteVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(newNoteVC, animated: true)
     }
     

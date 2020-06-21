@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		9B272D6E249A7114005C81AD /* Date=Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B272D6D249A7114005C81AD /* Date=Extension.swift */; };
 		9B51FB102495508A0089EA00 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B51FB0E2495508A0089EA00 /* Model.xcdatamodeld */; };
-		9B63BE3A249E56F500D52E1E /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B63BE38249E56F500D52E1E /* Image+CoreDataClass.swift */; };
-		9B63BE3B249E56F500D52E1E /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B63BE39249E56F500D52E1E /* Image+CoreDataProperties.swift */; };
+		9B63BE41249E81FD00D52E1E /* NoteAttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B63BE40249E81FD00D52E1E /* NoteAttachmentsViewController.swift */; };
+		9B63BE44249E8D8100D52E1E /* Attachment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B63BE42249E8D8000D52E1E /* Attachment+CoreDataClass.swift */; };
+		9B63BE45249E8D8100D52E1E /* Attachment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B63BE43249E8D8000D52E1E /* Attachment+CoreDataProperties.swift */; };
+		9B63BE49249E911900D52E1E /* NotesAttachementCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B63BE48249E911900D52E1E /* NotesAttachementCollectionViewController.swift */; };
+		9B63BE4C249FBCFF00D52E1E /* NoteAttachmentPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B63BE4B249FBCFF00D52E1E /* NoteAttachmentPhotoCollectionViewCell.swift */; };
 		9BFF80CD24968452002C9DC2 /* Subjects+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF80C924968452002C9DC2 /* Subjects+CoreDataClass.swift */; };
 		9BFF80CE24968452002C9DC2 /* Subjects+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF80CA24968452002C9DC2 /* Subjects+CoreDataProperties.swift */; };
 		9BFF80CF24968452002C9DC2 /* Notes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF80CB24968452002C9DC2 /* Notes+CoreDataClass.swift */; };
@@ -31,8 +34,11 @@
 /* Begin PBXFileReference section */
 		9B272D6D249A7114005C81AD /* Date=Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date=Extension.swift"; sourceTree = "<group>"; };
 		9B51FB0F2495508A0089EA00 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		9B63BE38249E56F500D52E1E /* Image+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataClass.swift"; sourceTree = "<group>"; };
-		9B63BE39249E56F500D52E1E /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9B63BE40249E81FD00D52E1E /* NoteAttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAttachmentsViewController.swift; sourceTree = "<group>"; };
+		9B63BE42249E8D8000D52E1E /* Attachment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attachment+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9B63BE43249E8D8000D52E1E /* Attachment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attachment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9B63BE48249E911900D52E1E /* NotesAttachementCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAttachementCollectionViewController.swift; sourceTree = "<group>"; };
+		9B63BE4B249FBCFF00D52E1E /* NoteAttachmentPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAttachmentPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		9BFF80C924968452002C9DC2 /* Subjects+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9BFF80CA24968452002C9DC2 /* Subjects+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subjects+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BFF80CB24968452002C9DC2 /* Notes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -70,6 +76,8 @@
 				EE57BF35249418CA00735498 /* SubjectNotesViewController.swift */,
 				EE57BF372494900000735498 /* NewNoteViewController.swift */,
 				EE48ACCD249BED14004709BC /* MapViewController.swift */,
+				9B63BE40249E81FD00D52E1E /* NoteAttachmentsViewController.swift */,
+				9B63BE48249E911900D52E1E /* NotesAttachementCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -77,8 +85,8 @@
 		9B51FB1A249561770089EA00 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				9B63BE38249E56F500D52E1E /* Image+CoreDataClass.swift */,
-				9B63BE39249E56F500D52E1E /* Image+CoreDataProperties.swift */,
+				9B63BE42249E8D8000D52E1E /* Attachment+CoreDataClass.swift */,
+				9B63BE43249E8D8000D52E1E /* Attachment+CoreDataProperties.swift */,
 				9BFF80C924968452002C9DC2 /* Subjects+CoreDataClass.swift */,
 				9BFF80CA24968452002C9DC2 /* Subjects+CoreDataProperties.swift */,
 				9BFF80CB24968452002C9DC2 /* Notes+CoreDataClass.swift */,
@@ -86,6 +94,14 @@
 				9B51FB0E2495508A0089EA00 /* Model.xcdatamodeld */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		9B63BE4A249FBC6800D52E1E /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9B63BE4B249FBCFF00D52E1E /* NoteAttachmentPhotoCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		9BFF80D124969740002C9DC2 /* Extensions */ = {
@@ -120,8 +136,9 @@
 				9BFF80D124969740002C9DC2 /* Extensions */,
 				9B51FB1A249561770089EA00 /* Data */,
 				9B51FB0D24954D6B0089EA00 /* ViewControllers */,
-				EEB1E537248EDBDB00C024E6 /* AppDelegate.swift */,
+				9B63BE4A249FBC6800D52E1E /* CollectionViewCell */,
 				EEB1E539248EDBDB00C024E6 /* SceneDelegate.swift */,
+				EEB1E537248EDBDB00C024E6 /* AppDelegate.swift */,
 				EEB1E53D248EDBDB00C024E6 /* Main.storyboard */,
 				EEB1E540248EDBDE00C024E6 /* Assets.xcassets */,
 				EEB1E542248EDBDE00C024E6 /* LaunchScreen.storyboard */,
@@ -203,16 +220,19 @@
 			files = (
 				EEB1E54F249017B000C024E6 /* SubjectsViewController.swift in Sources */,
 				9BFF80D324969762002C9DC2 /* UIStoryboard+Extension.swift in Sources */,
+				9B63BE41249E81FD00D52E1E /* NoteAttachmentsViewController.swift in Sources */,
 				EE57BF36249418CA00735498 /* SubjectNotesViewController.swift in Sources */,
 				9BFF80CF24968452002C9DC2 /* Notes+CoreDataClass.swift in Sources */,
 				9B51FB102495508A0089EA00 /* Model.xcdatamodeld in Sources */,
+				9B63BE44249E8D8100D52E1E /* Attachment+CoreDataClass.swift in Sources */,
 				EEB1E538248EDBDB00C024E6 /* AppDelegate.swift in Sources */,
 				EEB1E53A248EDBDB00C024E6 /* SceneDelegate.swift in Sources */,
-				9B63BE3B249E56F500D52E1E /* Image+CoreDataProperties.swift in Sources */,
+				9B63BE49249E911900D52E1E /* NotesAttachementCollectionViewController.swift in Sources */,
 				9BFF80D024968452002C9DC2 /* Notes+CoreDataProperties.swift in Sources */,
 				9BFF80CE24968452002C9DC2 /* Subjects+CoreDataProperties.swift in Sources */,
-				9B63BE3A249E56F500D52E1E /* Image+CoreDataClass.swift in Sources */,
+				9B63BE45249E8D8100D52E1E /* Attachment+CoreDataProperties.swift in Sources */,
 				9BFF80CD24968452002C9DC2 /* Subjects+CoreDataClass.swift in Sources */,
+				9B63BE4C249FBCFF00D52E1E /* NoteAttachmentPhotoCollectionViewCell.swift in Sources */,
 				9B272D6E249A7114005C81AD /* Date=Extension.swift in Sources */,
 				9BFF80D5249699A1002C9DC2 /* AppDelegate+Extension.swift in Sources */,
 				EE57BF382494900000735498 /* NewNoteViewController.swift in Sources */,

@@ -2,7 +2,7 @@
 //  Notes+CoreDataProperties.swift
 //  BackBenchers_MAD4114_FP
 //
-//  Created by Kashyap Jhaveri on 2020-06-20.
+//  Created by Kashyap Jhaveri on 2020-06-21.
 //  Copyright © 2020 Nikita Sandhu. All rights reserved.
 //
 //
@@ -20,24 +20,26 @@ extension Notes {
     @NSManaged public var data: String?
     @NSManaged public var timestamp: Date?
     @NSManaged public var title: String?
+    @NSManaged public var lat: Double
+    @NSManaged public var long: Double
     @NSManaged public var subject: Subjects?
-    @NSManaged public var images: NSSet?
+    @NSManaged public var attachments: NSSet?
 
 }
 
-// MARK: Generated accessors for images
+// MARK: Generated accessors for attachments
 extension Notes {
 
-    @objc(addImagesObject:)
-    @NSManaged public func addToImages(_ value: Image)
+    @objc(addAttachmentsObject:)
+    @NSManaged public func addToAttachments(_ value: Attachment)
 
-    @objc(removeImagesObject:)
-    @NSManaged public func removeFromImages(_ value: Image)
+    @objc(removeAttachmentsObject:)
+    @NSManaged public func removeFromAttachments(_ value: Attachment)
 
-    @objc(addImages:)
-    @NSManaged public func addToImages(_ values: NSSet)
+    @objc(addAttachments:)
+    @NSManaged public func addToAttachments(_ values: NSSet)
 
-    @objc(removeImages:)
-    @NSManaged public func removeFromImages(_ values: NSSet)
+    @objc(removeAttachments:)
+    @NSManaged public func removeFromAttachments(_ values: NSSet)
 
 }

@@ -1,5 +1,5 @@
 //
-//  Image+CoreDataClass.swift
+//  Attachment+CoreDataClass.swift
 //  BackBenchers_MAD4114_FP
 //
 //  Created by Kashyap Jhaveri on 2020-06-20.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(Image)
-public class Image: NSManagedObject {
+@objc(Attachment)
+public class Attachment: NSManagedObject {
 
 }

@@ -1,5 +1,5 @@
 //
-//  Image+CoreDataProperties.swift
+//  Attachment+CoreDataProperties.swift
 //  BackBenchers_MAD4114_FP
 //
 //  Created by Kashyap Jhaveri on 2020-06-20.
@@ -11,10 +11,10 @@ import Foundation
 import CoreData
 
 
-extension Image {
+extension Attachment {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Image> {
-        return NSFetchRequest<Image>(entityName: "Image")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Attachment> {
+        return NSFetchRequest<Attachment>(entityName: "Attachment")
     }
 
     @NSManaged public var data: Data?

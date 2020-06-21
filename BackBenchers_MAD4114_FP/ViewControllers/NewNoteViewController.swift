@@ -14,6 +14,8 @@ class NewNoteViewController: UIViewController {
     var selectedSubject:Subjects?
     var selectedNote:Notes?
     
+    var selectedImages = [UIImage]()
+    
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteData: UITextView!
     
@@ -28,9 +30,10 @@ class NewNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setToolbarHidden(false, animated: true)
         noteData.becomeFirstResponder()
         // Do any additional setup after loading the view.
-        checkForCamera()
+        //checkForCamera()
     }
     
     func createNewNote() {
@@ -39,6 +42,14 @@ class NewNoteViewController: UIViewController {
         newNote.data = noteData.text
         newNote.timestamp = Date()
         newNote.subject = selectedSubject
+        
+        for image in selectedImages {
+            let instance = Attachment(context: appDelegate.persistentContainer.viewContext)
+                instance.data = image.pngData()
+                instance.note = newNote
+            newNote.addAttachment(a:instance)
+        }
+        
         appDelegate.saveContext()
     }
     
@@ -54,16 +65,17 @@ class NewNoteViewController: UIViewController {
             note.title = title
             note.data = data
             note.timestamp = Date()
+            
             appDelegate.saveContext()
         }
         else if selectedNote == nil{
-            if !noteTitle.text!.isEmpty || !noteData.text!.isEmpty{
+            if !noteTitle.text!.isEmpty || !noteData.text!.isEmpty || !selectedImages.isEmpty{
                 createNewNote()
             }
         }
     }
     
-    @IBAction func addPhoto(_ sender: UIButton) {
+    @IBAction func choosePicture(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
                 
         alert.addAction(.init(title: "Take a Picture", style: .default, handler: { (action:UIAlertAction) in
@@ -78,7 +90,9 @@ class NewNoteViewController: UIViewController {
         alert.addAction(.init(title: "Choose from Library", style: .default, handler: { (action:UIAlertAction) in
             if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
                 let picker = UIImagePickerController()
+                picker.delegate = self
                 picker.sourceType = .savedPhotosAlbum
+                picker.allowsEditing = true
                 self.present(picker, animated: true, completion: nil)
             }
             
@@ -90,7 +104,17 @@ class NewNoteViewController: UIViewController {
     }
     
     
-    @IBAction func addAudio(_ sender: UIButton) {
+    @IBAction func attachmentsClick(_ sender: UIBarButtonItem) {
+        
+        if let note = selectedNote{
+            let NoteAttachmentsVC = UIStoryboard.getViewController(identifier: "NotesAttachementCollectionViewController") as! NotesAttachementCollectionViewController
+            if let atts = note.getAttachments()
+            {
+                NoteAttachmentsVC.attachments = atts
+            }
+            self.present(NoteAttachmentsVC, animated: true, completion: nil)
+        }
+        
     }
     
 
@@ -99,6 +123,18 @@ class NewNoteViewController: UIViewController {
 extension NewNoteViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let userPickedImage = info[.editedImage] as? UIImage else { return }
         
+        if let note = selectedNote{
+            let instance = Attachment(context: appDelegate.persistentContainer.viewContext)
+                instance.data = userPickedImage.pngData()
+                instance.note = note
+            note.addAttachment(a: instance)
+        }
+        else{
+            selectedImages.append(userPickedImage)
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
     }
 }
