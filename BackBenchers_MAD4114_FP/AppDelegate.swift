@@ -13,7 +13,20 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        Thread.sleep(forTimeInterval: 0.5)
+        //Thread.sleep(forTimeInterval: 0.5)
+        
+        if UserDefaults.standard.bool(forKey: "isAppLaunchedBefore") == false {
+            
+            Subjects.addSubject(subjectName: "Shopping")
+            Subjects.addSubject(subjectName: "Reciepe")
+            Subjects.addSubject(subjectName: "Grocery")
+            Subjects.addSubject(subjectName: "Todo")
+
+            
+            UserDefaults.standard.set(false, forKey: "isAppFirstLaunch")
+        }
+        UserDefaults.standard.set(true, forKey: "isAppLaunchedBefore")
+        print(UserDefaults.standard.bool(forKey: "isAppFirstLaunch"))
         return true
     }
 

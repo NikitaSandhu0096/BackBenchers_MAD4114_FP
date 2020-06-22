@@ -52,6 +52,43 @@ class SubjectsViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func findSubject(subjectName:String) -> Subjects {
+        let foundSubject = subjects.filter({
+            $0.subjectName == subjectName
+        })
+        
+        if !foundSubject.isEmpty{
+            return foundSubject[0]
+        }
+        return Subjects()
+    }
+    
+    @IBAction func shoppingClick(_ sender: UIButton) {
+        let subjectNotesViewController = UIStoryboard.getViewController(identifier: "SubjectNotesViewController") as! SubjectNotesViewController
+        subjectNotesViewController.subject = findSubject(subjectName: "Shopping")
+        self.navigationController?.pushViewController(subjectNotesViewController, animated: true)
+        
+    }
+    
+    @IBAction func recipeClick(_ sender: UIButton) {
+        let subjectNotesViewController = UIStoryboard.getViewController(identifier: "SubjectNotesViewController") as! SubjectNotesViewController
+        subjectNotesViewController.subject = findSubject(subjectName: "Reciepe")
+        self.navigationController?.pushViewController(subjectNotesViewController, animated: true)
+    }
+    
+
+    @IBAction func groceryClick(_ sender: UIButton) {
+        let subjectNotesViewController = UIStoryboard.getViewController(identifier: "SubjectNotesViewController") as! SubjectNotesViewController
+        subjectNotesViewController.subject = findSubject(subjectName: "Grocery")
+        self.navigationController?.pushViewController(subjectNotesViewController, animated: true)
+    }
+    
+    @IBAction func todoClick(_ sender: UIButton) {
+        let subjectNotesViewController = UIStoryboard.getViewController(identifier: "SubjectNotesViewController") as! SubjectNotesViewController
+        subjectNotesViewController.subject = findSubject(subjectName: "Todo")
+        self.navigationController?.pushViewController(subjectNotesViewController, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

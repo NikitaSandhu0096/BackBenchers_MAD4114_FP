@@ -64,19 +64,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.myMap.setRegion(zoomArea, animated: true)
     }
     
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        let id = MKMapViewDefaultAnnotationViewReuseIdentifier
-//        if let v = mapView.dequeueReusableAnnotationView( withIdentifier: id, for: annotation) as? MKMarkerAnnotationView {
-//
-//            v.titleVisibility = .visible
-//            v.subtitleVisibility = .visible
-//            v.markerTintColor = .orange
-//            v.glyphText = "!"
-//            v.glyphTintColor = .systemPink
-//            return v
-//        }
-//        return nil
-//    }
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let id = MKMapViewDefaultAnnotationViewReuseIdentifier
+        if let v = mapView.dequeueReusableAnnotationView( withIdentifier: id, for: annotation) as? MKMarkerAnnotationView {
+
+            v.titleVisibility = .visible
+            v.subtitleVisibility = .visible
+            return v
+        }
+        return nil
+    }
 
     /*
     // MARK: - Navigation

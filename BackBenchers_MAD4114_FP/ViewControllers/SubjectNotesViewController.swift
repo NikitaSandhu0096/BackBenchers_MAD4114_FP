@@ -36,8 +36,10 @@ class SubjectNotesViewController: UIViewController {
     @IBAction func bbAddNewNote(_ sender: UIBarButtonItem) {
         let newNoteVC = UIStoryboard.getViewController(identifier: "NewNoteViewController") as! NewNoteViewController
         newNoteVC.selectedSubject = subject
+        newNoteVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(newNoteVC, animated: true)
     }
+    
     @IBAction func bbSort(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Sort", message: "Select an option to sort the notes", preferredStyle: .actionSheet)
         

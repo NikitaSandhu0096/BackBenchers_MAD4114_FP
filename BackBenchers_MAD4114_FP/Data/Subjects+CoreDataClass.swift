@@ -25,6 +25,7 @@ public class Subjects: NSManagedObject {
     }
     
     
+    
     static func addSubject(subjectName:String){
         let dataManager = AppDelegate.getDelegate().persistentContainer.viewContext
         let newEntity = NSEntityDescription.insertNewObject(forEntityName: "Subject", into: dataManager) as? Subjects

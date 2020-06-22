@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 
+
 class NewNoteViewController: UIViewController {
     
     let appDelegate = AppDelegate.getDelegate()
@@ -116,6 +117,11 @@ class NewNoteViewController: UIViewController {
         alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func recoardAudio(_ sender: UIBarButtonItem) {
+        
+        
     }
     
     
