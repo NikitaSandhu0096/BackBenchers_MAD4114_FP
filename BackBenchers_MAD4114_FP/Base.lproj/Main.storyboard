@@ -21,6 +21,9 @@
                                     <constraint firstAttribute="height" constant="44" id="clw-KZ-Dqy"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fuF-VY-1bU" id="qFL-bE-fzC"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qzQ-Cd-yze" userLabel="Tbl Subjects">
                                 <rect key="frame" x="20" y="221" width="374" height="592"/>
@@ -41,7 +44,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKX-kW-uLY">
-                                <rect key="frame" x="216" y="145" width="80" height="60"/>
+                                <rect key="frame" x="216" y="145" width="80" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="rmO-Df-sGo"/>
                                 </constraints>
@@ -54,7 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aux-9n-Eox">
-                                <rect key="frame" x="314" y="145" width="80" height="60"/>
+                                <rect key="frame" x="314" y="145" width="80" height="50"/>
                                 <color key="tintColor" red="0.28870891198023563" green="0.43968277127299138" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="todo">
                                     <color key="titleColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -76,7 +79,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iJ-Cc-BzO">
-                                <rect key="frame" x="117" y="145" width="80" height="60"/>
+                                <rect key="frame" x="117" y="145" width="80" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="egJ-4n-had"/>
                                 </constraints>
@@ -348,56 +351,12 @@
                     <connections>
                         <outlet property="noteData" destination="hFT-xG-oAv" id="Dag-Ak-RFD"/>
                         <outlet property="noteTitle" destination="XfN-6J-asQ" id="dcp-HS-Lih"/>
+                        <outlet property="recordButton" destination="F7a-Ht-gVA" id="Wpg-AD-KOO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SvT-ee-9hG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4121.739130434783" y="-277.23214285714283"/>
-        </scene>
-        <!--Note Attachments View Controller-->
-        <scene sceneID="pdT-1R-HbX">
-            <objects>
-                <viewController storyboardIdentifier="NoteAttachmentsViewController" id="wzV-3m-aqK" customClass="NoteAttachmentsViewController" customModule="BackBenchers_MAD4114_FP" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Txp-Eb-FdW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wne-NR-kfy">
-                                <rect key="frame" x="20" y="381" width="374" height="481"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <gestureRecognizers/>
-                            </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8UK-UO-4Mw">
-                                <rect key="frame" x="20" y="44" width="374" height="312"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <gestureRecognizers/>
-                        <viewLayoutGuide key="safeArea" id="4A5-wR-hxP"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="zlr-UE-hA5" appends="YES" id="AjF-um-v72"/>
-                            <outletCollection property="gestureRecognizers" destination="2hC-46-g3U" appends="YES" id="MoZ-ft-ZYr"/>
-                        </connections>
-                    </view>
-                    <connections>
-                        <outlet property="imageView" destination="8UK-UO-4Mw" id="QA8-Zf-9vS"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e5z-CX-YGL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="zlr-UE-hA5" userLabel="rightSwipe">
-                    <connections>
-                        <action selector="rightSwipe:" destination="wzV-3m-aqK" id="aEr-zY-TGs"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="2hC-46-g3U" userLabel="leftSwipe">
-                    <connections>
-                        <action selector="leftSwipe:" destination="wzV-3m-aqK" id="gRW-iu-C8x"/>
-                    </connections>
-                </swipeGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="4926.0869565217399" y="-280.58035714285711"/>
         </scene>
         <!--Notes Attachement Collection View Controller-->
         <scene sceneID="Rkt-uw-HmJ">

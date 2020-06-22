@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         }
         UserDefaults.standard.set(true, forKey: "isAppLaunchedBefore")
-        print(UserDefaults.standard.bool(forKey: "isAppFirstLaunch"))
         return true
     }
 

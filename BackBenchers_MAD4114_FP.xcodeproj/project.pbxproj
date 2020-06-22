@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9B272D6E249A7114005C81AD /* Date=Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B272D6D249A7114005C81AD /* Date=Extension.swift */; };
 		9B51FB102495508A0089EA00 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B51FB0E2495508A0089EA00 /* Model.xcdatamodeld */; };
-		9B63BE41249E81FD00D52E1E /* NoteAttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B63BE40249E81FD00D52E1E /* NoteAttachmentsViewController.swift */; };
 		9B63BE44249E8D8100D52E1E /* Attachment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B63BE42249E8D8000D52E1E /* Attachment+CoreDataClass.swift */; };
 		9B63BE45249E8D8100D52E1E /* Attachment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B63BE43249E8D8000D52E1E /* Attachment+CoreDataProperties.swift */; };
 		9B63BE49249E911900D52E1E /* NotesAttachementCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B63BE48249E911900D52E1E /* NotesAttachementCollectionViewController.swift */; };
@@ -34,7 +33,6 @@
 /* Begin PBXFileReference section */
 		9B272D6D249A7114005C81AD /* Date=Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date=Extension.swift"; sourceTree = "<group>"; };
 		9B51FB0F2495508A0089EA00 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		9B63BE40249E81FD00D52E1E /* NoteAttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAttachmentsViewController.swift; sourceTree = "<group>"; };
 		9B63BE42249E8D8000D52E1E /* Attachment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attachment+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9B63BE43249E8D8000D52E1E /* Attachment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attachment+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9B63BE48249E911900D52E1E /* NotesAttachementCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAttachementCollectionViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 				EE57BF35249418CA00735498 /* SubjectNotesViewController.swift */,
 				EE57BF372494900000735498 /* NewNoteViewController.swift */,
 				EE48ACCD249BED14004709BC /* MapViewController.swift */,
-				9B63BE40249E81FD00D52E1E /* NoteAttachmentsViewController.swift */,
 				9B63BE48249E911900D52E1E /* NotesAttachementCollectionViewController.swift */,
 			);
 			path = ViewControllers;
@@ -230,7 +227,6 @@
 			files = (
 				EEB1E54F249017B000C024E6 /* SubjectsViewController.swift in Sources */,
 				9BFF80D324969762002C9DC2 /* UIStoryboard+Extension.swift in Sources */,
-				9B63BE41249E81FD00D52E1E /* NoteAttachmentsViewController.swift in Sources */,
 				EE57BF36249418CA00735498 /* SubjectNotesViewController.swift in Sources */,
 				9BFF80CF24968452002C9DC2 /* Notes+CoreDataClass.swift in Sources */,
 				9B51FB102495508A0089EA00 /* Model.xcdatamodeld in Sources */,
