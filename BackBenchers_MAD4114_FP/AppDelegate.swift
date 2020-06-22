@@ -22,8 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Subjects.addSubject(subjectName: "Grocery")
             Subjects.addSubject(subjectName: "Todo")
 
-            
-            UserDefaults.standard.set(false, forKey: "isAppFirstLaunch")
         }
         UserDefaults.standard.set(true, forKey: "isAppLaunchedBefore")
         print(UserDefaults.standard.bool(forKey: "isAppFirstLaunch"))
