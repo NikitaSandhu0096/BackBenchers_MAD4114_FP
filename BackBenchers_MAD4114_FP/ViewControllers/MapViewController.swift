@@ -26,7 +26,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             return
         }
         notes = data
-        print(notes.count)
     }
     
     override func viewDidLoad() {

@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreLocation
-
+import AVFoundation
 
 class NewNoteViewController: UIViewController {
     
@@ -20,10 +20,11 @@ class NewNoteViewController: UIViewController {
     
     var locationManager = CLLocationManager()
     var locationCoords : CLLocationCoordinate2D?
-    
+        
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteData: UITextView!
     
+    @IBOutlet weak var recordButton: UIBarButtonItem!
     func initLocation() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -119,8 +120,8 @@ class NewNoteViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    
     @IBAction func recoardAudio(_ sender: UIBarButtonItem) {
-        
         
     }
     

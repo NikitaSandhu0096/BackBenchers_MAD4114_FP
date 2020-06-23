@@ -44,7 +44,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKX-kW-uLY">
-                                <rect key="frame" x="216" y="145" width="80" height="50"/>
+                                <rect key="frame" x="216" y="145" width="80" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="rmO-Df-sGo"/>
                                 </constraints>
@@ -57,7 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aux-9n-Eox">
-                                <rect key="frame" x="314" y="145" width="80" height="50"/>
+                                <rect key="frame" x="314" y="145" width="80" height="60"/>
                                 <color key="tintColor" red="0.28870891198023563" green="0.43968277127299138" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" image="todo">
                                     <color key="titleColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,7 +79,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iJ-Cc-BzO">
-                                <rect key="frame" x="117" y="145" width="80" height="50"/>
+                                <rect key="frame" x="117" y="145" width="80" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="egJ-4n-had"/>
                                 </constraints>
@@ -386,10 +386,10 @@
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="qqW-KV-Bcq" firstAttribute="leading" secondItem="beM-mZ-Tdj" secondAttribute="leadingMargin" constant="-8" id="0FH-qS-XJb"/>
-                                    <constraint firstItem="qqW-KV-Bcq" firstAttribute="centerX" secondItem="beM-mZ-Tdj" secondAttribute="centerX" id="LIi-nw-ZkN"/>
-                                    <constraint firstItem="qqW-KV-Bcq" firstAttribute="centerY" secondItem="beM-mZ-Tdj" secondAttribute="centerY" id="UGY-V1-nij"/>
-                                    <constraint firstItem="qqW-KV-Bcq" firstAttribute="top" secondItem="beM-mZ-Tdj" secondAttribute="topMargin" constant="-8" id="onf-KC-YfH"/>
+                                    <constraint firstItem="qqW-KV-Bcq" firstAttribute="leading" secondItem="beM-mZ-Tdj" secondAttribute="leadingMargin" constant="-8" id="3n1-Pi-RZ4"/>
+                                    <constraint firstItem="qqW-KV-Bcq" firstAttribute="centerY" secondItem="beM-mZ-Tdj" secondAttribute="centerY" id="T4f-87-WOH"/>
+                                    <constraint firstItem="qqW-KV-Bcq" firstAttribute="top" secondItem="beM-mZ-Tdj" secondAttribute="topMargin" constant="-8" id="bgm-fD-Od7"/>
+                                    <constraint firstItem="qqW-KV-Bcq" firstAttribute="centerX" secondItem="beM-mZ-Tdj" secondAttribute="centerX" id="otv-ub-4J6"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="image" destination="qqW-KV-Bcq" id="uLm-It-oSB"/>
@@ -404,7 +404,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ueb-Io-KdU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5681.1594202898559" y="-281.25"/>
+            <point key="canvasLocation" x="4815.9420289855079" y="-277.23214285714283"/>
         </scene>
     </scenes>
     <resources>

@@ -14,6 +14,8 @@ class SubjectsViewController: UIViewController {
     @IBOutlet weak var tblSubjects: UITableView!
     let appDelegate = AppDelegate.getDelegate()
     var subjects = [Subjects]()
+    var searchedSubjects = [Subjects]()
+    var isSearching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,18 +109,40 @@ extension SubjectsViewController : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subjects.count
+        if isSearching
+        {
+            return searchedSubjects.count
+        }
+        else{
+             return subjects.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NotesCell")
-        cell?.textLabel?.text = subjects[indexPath.row].subjectName
+        let subject:Subjects
+        
+        if isSearching {
+            subject = searchedSubjects[indexPath.row]
+        }
+        else{
+            subject = subjects[indexPath.row]
+        }
+        
+        cell?.textLabel?.text = subject.subjectName
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let subjectNotesViewController = UIStoryboard.getViewController(identifier: "SubjectNotesViewController") as! SubjectNotesViewController
-        subjectNotesViewController.subject = subjects[indexPath.row]
+        
+        if isSearching{
+            subjectNotesViewController.subject = searchedSubjects[indexPath.row]
+        }
+        else{
+            subjectNotesViewController.subject = subjects[indexPath.row]
+        }
+        
         self.navigationController?.pushViewController(subjectNotesViewController, animated: true)
     }
     
@@ -128,10 +152,41 @@ extension SubjectsViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            let subject = subjects[indexPath.row]
-            Subjects.deleteSubject(s: subject)
-            reloadData()
+            let subject:Subjects
+            if isSearching {
+                subject = searchedSubjects[indexPath.row]
+            }
+            else{
+                subject = subjects[indexPath.row]
+            }
+            
+            if  subject.subjectName! != "Shopping" && subject.subjectName! != "Reciepe" && subject.subjectName! != "Grocery" && subject.subjectName! != "Todo"{
+                 Subjects.deleteSubject(s: subject)
+                 reloadData()
+            }
+            else{
+                let alert = UIAlertController(title: "Not Allowed", message: "Cannot delete this subject", preferredStyle: .alert)
+                alert.addAction(.init(title: "Ok", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
         
+    }
+}
+
+
+extension SubjectsViewController : UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchedSubjects = subjects.filter({
+            return $0.subjectName!.lowercased().hasPrefix(searchText.lowercased())
+        })
+        isSearching = true
+        tblSubjects.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = false
+        searchBar.text = ""
+        self.tblSubjects.reloadData()
     }
 }

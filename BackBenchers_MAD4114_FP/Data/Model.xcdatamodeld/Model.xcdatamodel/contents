@@ -18,8 +18,8 @@
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="subject" inverseEntity="Note"/>
     </entity>
     <elements>
+        <element name="Attachment" positionX="-171" positionY="36" width="128" height="73"/>
         <element name="Note" positionX="1.390625" positionY="-9" width="128" height="148"/>
         <element name="Subject" positionX="-358.40234375" positionY="4.73046875" width="128" height="73"/>
-        <element name="Attachment" positionX="-171" positionY="36" width="128" height="73"/>
     </elements>
 </model>
