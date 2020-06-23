@@ -35,7 +35,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        myMap.showsUserLocation = true
+        myMap.showsUserLocation = false
         myMap.delegate = self
         
         // Do any additional setup after loading the view.
