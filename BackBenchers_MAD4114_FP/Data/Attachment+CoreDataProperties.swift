@@ -2,7 +2,7 @@
 //  Attachment+CoreDataProperties.swift
 //  BackBenchers_MAD4114_FP
 //
-//  Created by Kashyap Jhaveri on 2020-06-23.
+//  Created by Kashyap Jhaveri on 2020-06-24.
 //  Copyright © 2020 Nikita Sandhu. All rights reserved.
 //
 //
@@ -18,6 +18,8 @@ extension Attachment {
     }
 
     @NSManaged public var data: Data?
+    @NSManaged public var filePath: URL?
+    @NSManaged public var timeStamp: Date?
     @NSManaged public var note: Notes?
 
 }

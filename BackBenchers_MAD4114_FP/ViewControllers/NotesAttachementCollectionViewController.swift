@@ -11,7 +11,6 @@ import UIKit
 
 
 class NotesAttachementCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    private let reuseIdentifier = "NoteAttachmentPhotoCollectionViewCell"
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     private let itemsPerRow: CGFloat = 3
     
@@ -47,18 +46,48 @@ class NotesAttachementCollectionViewController: UICollectionViewController, UICo
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         if let count = attachments?.count{
+            print(count)
             return count
         }
         return 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! NoteAttachmentPhotoCollectionViewCell
+        let attachment = attachments![indexPath.row]
         
-        let imageData = attachments![indexPath.row].data!
-        cell.image.image = UIImage(data: imageData)
+        if let imageData = attachment.data{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoteAttachmentPhotoCollectionViewCell", for: indexPath) as! NoteAttachmentPhotoCollectionViewCell
+            let imageData = imageData
+            cell.image.image = UIImage(data: imageData)
+            
+            return cell
+        }
+        else{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoteAttachmentAudioCollectionViewCell", for: indexPath) as! NoteAttachmentAudioCollectionViewCell
+            
+            cell.audioFileTitle.text = Date.getStringDate(dateFormate: "HH:mm E, d MMM y", date: attachment.timeStamp!)
+            
+            return cell
+        }
         
-        return cell
+        
+        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let attachment = attachments![indexPath.row]
+        
+        if let imageData = attachment.data{
+            let NoteAttachmentImageVC = UIStoryboard.getViewController(identifier: "NoteAttachmentImageViewController") as! NoteAttachmentImageViewController
+            NoteAttachmentImageVC.imageData = imageData
+            self.present(NoteAttachmentImageVC, animated: true, completion: nil)
+        }
+        else{
+            
+            let NoteAttachmentAudioVC = UIStoryboard.getViewController(identifier: "NoteAttachmentAudioViewController") as! NoteAttachmentAudioViewController
+            NoteAttachmentAudioVC.attachment = attachment
+            self.present(NoteAttachmentAudioVC, animated: true, completion: nil)
+        }
     }
     
     

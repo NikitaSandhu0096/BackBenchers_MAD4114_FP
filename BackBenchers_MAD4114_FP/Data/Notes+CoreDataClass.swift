@@ -28,6 +28,7 @@ public class Notes: Subjects {
     func addAttachment(a:Attachment) {
         let attachments = self.mutableSetValue(forKey: "attachments")
         attachments.add(a)
+        AppDelegate.getDelegate().saveContext()
     }
     
     func getAttachments() -> [Attachment]? {

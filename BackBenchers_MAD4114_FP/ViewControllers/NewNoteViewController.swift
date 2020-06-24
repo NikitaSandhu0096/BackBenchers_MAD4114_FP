@@ -17,10 +17,15 @@ class NewNoteViewController: UIViewController {
     var selectedNote:Notes?
     
     private var selectedImages = [UIImage]()
+    private var selectedAttachments = [Attachment]()
+    
     
     var locationManager = CLLocationManager()
     var locationCoords : CLLocationCoordinate2D?
-        
+    
+    var recordingSession: AVAudioSession!
+    var audioRecorder: AVAudioRecorder!
+    
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteData: UITextView!
     
@@ -121,13 +126,84 @@ class NewNoteViewController: UIViewController {
     }
     
     
+    func initRecorder() {
+        recordingSession = AVAudioSession.sharedInstance()
+
+        do {
+            try recordingSession.setCategory(.playAndRecord, mode: .default)
+            try recordingSession.setActive(true)
+            recordingSession.requestRecordPermission() { allowed in
+                DispatchQueue.main.async {
+                    if allowed {
+                        
+                    } else {
+                       print("User declined the recorder permission")
+                    }
+                }
+            }
+        } catch {
+            print("Failed to initialize recorder")
+        }
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func startRecording(filePath:URL) {
+        let settings = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 12000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+
+        do {
+            audioRecorder = try AVAudioRecorder(url: filePath, settings: settings)
+            audioRecorder.delegate = self
+            audioRecorder.record()
+
+            recordButton.image = UIImage(systemName: "stop.circle.fill")
+        } catch {
+            finishRecording(success: false)
+        }
+    }
+    
+    func finishRecording(success: Bool) {
+        audioRecorder.stop()
+        audioRecorder = nil
+
+        if success {
+            recordButton.image = UIImage(systemName: "mic.fill")
+        }
+    }
+    
     @IBAction func recoardAudio(_ sender: UIBarButtonItem) {
-        
+        initRecorder()
+        if audioRecorder == nil {
+            let audioFilename = getDocumentsDirectory().appendingPathComponent(UUID().uuidString.trimmingCharacters(in: .whitespacesAndNewlines) + ".m4a")
+            startRecording(filePath: audioFilename)
+        } else {
+            if let note = selectedNote{
+                let instance = Attachment(context: appDelegate.persistentContainer.viewContext)
+                instance.filePath = audioRecorder.url
+                instance.timeStamp = Date()
+                instance.note = note
+                note.addAttachment(a: instance)
+            }
+            else{
+                let instance = Attachment(context: appDelegate.persistentContainer.viewContext)
+                instance.filePath = audioRecorder.url
+                selectedAttachments.append(instance)
+            }
+            
+            finishRecording(success: true)
+        }
     }
     
     
     @IBAction func attachmentsClick(_ sender: UIBarButtonItem) {
-        
         if let note = selectedNote{
             let NoteAttachmentsVC = UIStoryboard.getViewController(identifier: "NotesAttachementCollectionViewController") as! NotesAttachementCollectionViewController
             if let atts = note.getAttachments()
@@ -149,6 +225,7 @@ extension NewNoteViewController : UIImagePickerControllerDelegate, UINavigationC
             let instance = Attachment(context: appDelegate.persistentContainer.viewContext)
                 instance.data = userPickedImage.pngData()
                 instance.note = note
+                instance.timeStamp = Date()
             note.addAttachment(a: instance)
         }
         else{
@@ -167,5 +244,14 @@ extension NewNoteViewController : CLLocationManagerDelegate{
             return
         }
         self.locationCoords = location
+    }
+}
+
+
+extension NewNoteViewController: AVAudioRecorderDelegate{
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if !flag {
+            finishRecording(success: false)
+        }
     }
 }

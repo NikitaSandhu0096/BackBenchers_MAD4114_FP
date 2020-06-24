@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -376,7 +377,7 @@
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NoteAttachmentPhotoCollectionViewCell" id="beM-mZ-Tdj" customClass="NoteAttachmentPhotoCollectionViewCell" customModule="BackBenchers_MAD4114_FP" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zYN-oL-9xu">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -384,15 +385,49 @@
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         </imageView>
                                     </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="qqW-KV-Bcq" firstAttribute="leading" secondItem="beM-mZ-Tdj" secondAttribute="leadingMargin" constant="-8" id="3n1-Pi-RZ4"/>
-                                    <constraint firstItem="qqW-KV-Bcq" firstAttribute="centerY" secondItem="beM-mZ-Tdj" secondAttribute="centerY" id="T4f-87-WOH"/>
-                                    <constraint firstItem="qqW-KV-Bcq" firstAttribute="top" secondItem="beM-mZ-Tdj" secondAttribute="topMargin" constant="-8" id="bgm-fD-Od7"/>
-                                    <constraint firstItem="qqW-KV-Bcq" firstAttribute="centerX" secondItem="beM-mZ-Tdj" secondAttribute="centerX" id="otv-ub-4J6"/>
-                                </constraints>
+                                    <constraints>
+                                        <constraint firstItem="qqW-KV-Bcq" firstAttribute="centerX" secondItem="zYN-oL-9xu" secondAttribute="centerX" id="63O-6h-ZPz"/>
+                                        <constraint firstItem="qqW-KV-Bcq" firstAttribute="leading" secondItem="zYN-oL-9xu" secondAttribute="leading" id="7z1-YU-D2B"/>
+                                        <constraint firstItem="qqW-KV-Bcq" firstAttribute="centerY" secondItem="zYN-oL-9xu" secondAttribute="centerY" id="8kH-Ed-Dbl"/>
+                                        <constraint firstItem="qqW-KV-Bcq" firstAttribute="top" secondItem="zYN-oL-9xu" secondAttribute="top" id="ucw-yS-Fm6"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="200" height="200"/>
                                 <connections>
                                     <outlet property="image" destination="qqW-KV-Bcq" id="uLm-It-oSB"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" reuseIdentifier="NoteAttachmentAudioCollectionViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="jKC-VE-oLM" customClass="NoteAttachmentAudioCollectionViewCell" customModule="BackBenchers_MAD4114_FP" customModuleProvider="target">
+                                <rect key="frame" x="214" y="0.0" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="67X-tq-VTJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dpv-go-Okj">
+                                            <rect key="frame" x="58" y="18.5" width="84" height="83"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="84" id="wDx-bJ-Tne"/>
+                                                <constraint firstAttribute="height" constant="84" id="x0U-kd-Lej"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwr-RL-HVn">
+                                            <rect key="frame" x="79" y="110" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Dpv-go-Okj" firstAttribute="centerX" secondItem="67X-tq-VTJ" secondAttribute="centerX" id="KYk-zx-Dzo"/>
+                                        <constraint firstItem="pwr-RL-HVn" firstAttribute="top" secondItem="Dpv-go-Okj" secondAttribute="bottom" constant="8" id="Ose-fo-gaX"/>
+                                        <constraint firstItem="Dpv-go-Okj" firstAttribute="centerX" secondItem="pwr-RL-HVn" secondAttribute="centerX" id="YiU-RZ-CFr"/>
+                                        <constraint firstItem="Dpv-go-Okj" firstAttribute="top" secondItem="67X-tq-VTJ" secondAttribute="top" constant="18" id="jAk-1Z-pBw"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="200" height="200"/>
+                                <connections>
+                                    <outlet property="audioFileTitle" destination="pwr-RL-HVn" id="kf2-00-TKd"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -406,6 +441,75 @@
             </objects>
             <point key="canvasLocation" x="4815.9420289855079" y="-277.23214285714283"/>
         </scene>
+        <!--Note Attachment Audio View Controller-->
+        <scene sceneID="JHE-Kk-NPN">
+            <objects>
+                <viewController storyboardIdentifier="NoteAttachmentAudioViewController" id="RvH-8j-gsM" customClass="NoteAttachmentAudioViewController" customModule="BackBenchers_MAD4114_FP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nk9-IG-Agg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqL-WB-o0D">
+                                <rect key="frame" x="163" y="579.5" width="88" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="7oV-Ez-w1p"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="play.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="playPauseButtonClick:" destination="RvH-8j-gsM" eventType="touchUpInside" id="S7m-Bg-7iR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaQ-1B-YKL">
+                                <rect key="frame" x="20" y="222" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XaQ-1B-YKL" firstAttribute="trailing" secondItem="Nk9-IG-Agg" secondAttribute="trailingMargin" id="0hJ-6F-bWL"/>
+                            <constraint firstItem="XaQ-1B-YKL" firstAttribute="centerX" secondItem="gqL-WB-o0D" secondAttribute="centerX" id="46h-SP-l2Y"/>
+                            <constraint firstItem="XaQ-1B-YKL" firstAttribute="leading" secondItem="Nk9-IG-Agg" secondAttribute="leadingMargin" id="96M-GZ-6uf"/>
+                            <constraint firstItem="XaQ-1B-YKL" firstAttribute="top" secondItem="4c2-1j-13w" secondAttribute="top" constant="178" id="fVp-Xb-8xe"/>
+                            <constraint firstItem="4c2-1j-13w" firstAttribute="bottom" secondItem="gqL-WB-o0D" secondAttribute="bottom" constant="209" id="h2V-vg-BjB"/>
+                            <constraint firstItem="gqL-WB-o0D" firstAttribute="leading" secondItem="4c2-1j-13w" secondAttribute="leading" constant="163" id="hlF-3y-5J7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4c2-1j-13w"/>
+                    </view>
+                    <connections>
+                        <outlet property="audioNoteTitle" destination="XaQ-1B-YKL" id="crd-Jv-WwK"/>
+                        <outlet property="playPauseButton" destination="gqL-WB-o0D" id="Mmr-ol-j7J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yeo-xc-2Ml" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5592.753623188406" y="-617.41071428571422"/>
+        </scene>
+        <!--Note Attachment Image View Controller-->
+        <scene sceneID="JMq-mP-Job">
+            <objects>
+                <viewController storyboardIdentifier="NoteAttachmentImageViewController" id="R86-fm-419" customClass="NoteAttachmentImageViewController" customModule="BackBenchers_MAD4114_FP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="59Y-U9-gl8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kWB-77-9c2">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="MBm-Xw-WYF"/>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="kWB-77-9c2" id="Kit-lG-gDv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5N8-94-inu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5593" y="41"/>
+        </scene>
     </scenes>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
@@ -414,6 +518,7 @@
         <image name="mic.fill" catalog="system" width="108" height="128"/>
         <image name="paperclip" catalog="system" width="128" height="128"/>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
         <image name="recipeBook" width="50" height="50"/>
         <image name="shoppingIcon" width="50" height="50"/>
         <image name="todo" width="50" height="50"/>
