@@ -16,7 +16,6 @@ class NewNoteViewController: UIViewController {
     var selectedSubject:Subjects?
     var selectedNote:Notes?
     
-    private var selectedImages = [UIImage]()
     private var selectedAttachments = [Attachment]()
     
     
@@ -65,11 +64,9 @@ class NewNoteViewController: UIViewController {
         newNote.long = (locationCoords?.longitude ?? 0.0) as Double
         
         
-        for image in selectedImages {
-            let instance = Attachment(context: appDelegate.persistentContainer.viewContext)
-                instance.data = image.pngData()
-                instance.note = newNote
-            newNote.addAttachment(a:instance)
+        for a in selectedAttachments{
+            a.note = newNote
+            newNote.addAttachment(a: a)
         }
         
         appDelegate.saveContext()
@@ -91,7 +88,7 @@ class NewNoteViewController: UIViewController {
             appDelegate.saveContext()
         }
         else if selectedNote == nil{
-            if !noteTitle.text!.isEmpty || !noteData.text!.isEmpty || !selectedImages.isEmpty{
+            if !noteTitle.text!.isEmpty || !noteData.text!.isEmpty || !selectedAttachments.isEmpty{
                 createNewNote()
             }
         }
@@ -195,6 +192,7 @@ class NewNoteViewController: UIViewController {
             else{
                 let instance = Attachment(context: appDelegate.persistentContainer.viewContext)
                 instance.filePath = audioRecorder.url
+                instance.timeStamp = Date()
                 selectedAttachments.append(instance)
             }
             
@@ -211,6 +209,12 @@ class NewNoteViewController: UIViewController {
                 NoteAttachmentsVC.attachments = atts
             }
             self.present(NoteAttachmentsVC, animated: true, completion: nil)
+        }else{
+            if !selectedAttachments.isEmpty{
+                let NoteAttachmentsVC = UIStoryboard.getViewController(identifier: "NotesAttachementCollectionViewController") as! NotesAttachementCollectionViewController
+                NoteAttachmentsVC.attachments = selectedAttachments
+                self.present(NoteAttachmentsVC, animated: true, completion: nil)
+            }
         }
         
     }
@@ -229,7 +233,10 @@ extension NewNoteViewController : UIImagePickerControllerDelegate, UINavigationC
             note.addAttachment(a: instance)
         }
         else{
-            selectedImages.append(userPickedImage)
+            let instance = Attachment(context: appDelegate.persistentContainer.viewContext)
+                instance.data = userPickedImage.pngData()
+                instance.timeStamp = Date()
+            selectedAttachments.append(instance)
         }
         
         picker.dismiss(animated: true, completion: nil)
