@@ -104,6 +104,11 @@ class NewNoteViewController: UIViewController {
                 picker.sourceType = .camera
                 self.present(picker, animated: true, completion: nil)
             }
+            else{
+                let alert = UIAlertController(title: "Camera Not Available", message: nil, preferredStyle: .alert)
+                alert.addAction(.init(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         }))
         
         alert.addAction(.init(title: "Choose from Library", style: .default, handler: { (action:UIAlertAction) in
@@ -124,6 +129,7 @@ class NewNoteViewController: UIViewController {
     
     
     func initRecorder() {
+        //https://www.hackingwithswift.com/example-code/media/how-to-record-audio-using-avaudiorecorder
         recordingSession = AVAudioSession.sharedInstance()
 
         do {
@@ -131,10 +137,8 @@ class NewNoteViewController: UIViewController {
             try recordingSession.setActive(true)
             recordingSession.requestRecordPermission() { allowed in
                 DispatchQueue.main.async {
-                    if allowed {
-                        
-                    } else {
-                       print("User declined the recorder permission")
+                    if !allowed {
+                        print("User declined the recorder permission")
                     }
                 }
             }
